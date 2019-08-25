@@ -1,0 +1,74 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <title>
+      Grievances and Requests
+    </title>
+    <link rel="stylesheet" href='{% static "css/grievance_style.css"%}' />
+    <link
+      href="//fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Muli"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- For-Mobile-Apps-and-Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="keywords"
+      content="Classy Contact Form Widget Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design"
+    />
+    <script type="application/x-javascript">
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <!-- //For-Mobile-Apps-and-Meta-Tags -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grievances and Request Section</h1>
+      <div class="left-w3">
+        <h2>Contact Us!</h2>
+        <form action="../addgrievance/" method="POST">
+          {% csrf_token %}
+          <div class="agile1">
+            <h3>Name</h3>
+            <input
+              type="text"
+              name="name"
+              class="name"
+              placeholder=""
+              required=""
+            />
+          </div>
+          <div class="agile1">
+            <h3>Community</h3>
+            <input
+              type="text"
+              name="community"
+              class="company"
+              placeholder=""
+              required=""
+            />
+          </div>
+          <div class="agile1">
+            <h3>Request/grievance</h3>
+            <textarea name="msg" placeholder="" required=""></textarea>
+          </div>
+          <input type="submit" value="Send Message" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

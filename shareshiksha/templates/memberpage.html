@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="stylesheet" href="admin_style.css" />
+  <style>
+      body {
+  padding: 0px;
+  margin: 0px;
+  /* background-color: linear-gradient(grey, black); */
+  background-color:darkslategrey;
+  color: grey;
+}
+
+table {
+  border-color: black;
+  /* display: block; */
+  /* font-size: 20px; */
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+h1{
+    float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 50px; 
+  line-height: 25px;
+  border-radius: 4px;
+  color: aliceblue;
+}
+
+html{
+    /* background-image:image(static/images1/img1.jpg); */
+    /* background-image: url("static/images1/img1.jpg"); */
+}
+
+  </style>
+</head>
+
+<body  >
+        
+  <!-- nav daal dena -->
+  <h1>Member Page</h1>
+
+  {% for item in school_list %}
+  <h3>{{ item.school_name }}</h3>
+  <table style="width:100%">
+    <tr>
+      <th>r1</th>
+      <th>r2</th>
+      <th>r3</th>
+    </tr>
+    <tr>
+      <td>{{ item.resource1 }}</td>
+      <td>{{ item.resource2 }}</td>
+      <td>{{ item.resource3 }}</td>
+    </tr>
+  </table>
+
+  <form action="/updateresource/" method="POST">{% csrf_token %}
+    <input type="text" name = "resource" />
+    <input type="text" name="school1"/>
+    <input type="text" name="school2"/>
+    <input type="number" name="num"/>
+    <input type="submit" value="update" />
+
+</form>
+
+  {% endfor %}
+</body>
